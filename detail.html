@@ -1,0 +1,23 @@
+<form name="apptForm">
+
+  <div class="control-group" ng-class="{error: apptForm.when.$invalid}">
+    <label>When</label>
+    <div class="input-append"
+      datetimepicker="$parent.appt.when"
+      ondateselect="onDateSelect(date)"
+      ng-model="$parent.appt.when">
+        <input type="text" class="input input-large" id="startTime" name="when" placeholder=""
+          ng-model="$parent.appt.when" ng-required="true"
+          data-format="dd/MM/yyyy hh:mm:ss"
+          ng-hide="display"/>
+          <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+    </div>
+  </div>
+
+  <br>
+  <a href="#/" class="btn">Cancel</a>
+  <button ng-click="add()" ng-disabled="isClean() || apptForm.$invalid"
+  class="btn btn-primary">Save</button>
+  <button ng-click="destroy()"
+  ng-show="project._id" class="btn btn-danger">Delete</button>
+</form>
