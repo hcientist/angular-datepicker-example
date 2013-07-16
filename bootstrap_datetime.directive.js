@@ -17,7 +17,7 @@ angular.module('uitools',[]).directive('datetimepicker', function () {
            */
           if(typeof scope.ondateselect === 'function') {
             console.log(newValue.localDate);
-            scope.ondateselect(newValue.localDate);
+            scope.ondateselect({date:newValue.localDate});
           }
         });
       });
